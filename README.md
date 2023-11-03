@@ -111,10 +111,10 @@ We utilize 2 scripts to create and insert the unique flags to the **flags** tabl
 
 	The script will now build the containers and tag them as **<dirname:TEAM#>** e.g. **chal1:TEAM1** , **chal1:TEAM2** and so on. Finally it inserts the new flag into the **flags** table with the content and add this text **"TEAMID=#"** in the **data** column. This comes later when we check the submissions. After this step the flags table looks like this: 
 
-| id | challenge_id | type   | content   | data      |
-|----|--------------|--------|-----------|-----------|
-| 1  | 1            | static | flag{test_1} | TEAMID=1  |
-| 2  | 1            | static | flag{test_2} | TEAMID=2 |
+	| id | challenge_id | type   | content   | data      |
+	|----|--------------|--------|-----------|-----------|
+	| 1  | 1            | static | flag{test_1} | TEAMID=1  |
+	| 2  | 1            | static | flag{test_2} | TEAMID=2 |
 
 #### Part 2: Checking the submission
 
