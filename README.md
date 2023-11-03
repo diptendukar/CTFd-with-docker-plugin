@@ -128,9 +128,9 @@ We utilize 2 scripts to create and insert the unique flags to the **flags** tabl
 	
 3.  Next we updated the `__init__.py` in `/plugins/challenges`. 
 	[![image.png](https://i.postimg.cc/Fst9ZbQg/image.png)](https://postimg.cc/jCX0q72L)
-	Here for the challenge submitted we first check for flags and the content of the **data** column. If that contains the keyword **"TEAMID"** we infer that it is a individual team flag and send the flag checking logic to the new **compareteams** function. If the data column is empty - for a standard challenge we sent to the normal **compare**  function. 
+Here for the challenge submitted we first check for flags and the content of the **data** column. If that contains the keyword **"TEAMID"** we infer that it is a individual team flag and send the flag checking logic to the new **compareteams** function. If the data column is empty - for a standard challenge we sent to the normal **compare**  function. 
 	
-4.  Added the new method **compareteams** in `/plugins/flags/__init__.py`:
+5.  Added the new method **compareteams** in `/plugins/flags/__init__.py`:
 	[![image.png](https://i.postimg.cc/httPzDBH/image.png)](https://postimg.cc/gn1P1PrD)
 	Here we can check the flag. Also we log the case if one team submits another team's flag (flag sharing).
 
