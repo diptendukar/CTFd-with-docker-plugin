@@ -120,18 +120,22 @@ We utilize 2 scripts to create and insert the unique flags to the **flags** tabl
 
 1. We edited the `__init__.py` in the containers plugin. 
 	[![image.png](https://i.postimg.cc/MZmZKMBW/image.png)](https://postimg.cc/4nnRW3wM) 
-		The `TEAM_INDIVIDUAL_FLAGS=True` controls how the plugin will behave. When True it will look up the `container_challenge_model` table for the image, this will contain a name like - `<name:latest>`. We get the team id from the request and start `<name:TEAM#>`. So each team starts their pre-built container. 
 
-2. Next change is in the `challenges.py` in `/api/v1`. 
+The `TEAM_INDIVIDUAL_FLAGS=True` controls how the plugin will behave. When True it will look up the `container_challenge_model` table for the image, this will contain a name like - `<name:latest>`. We get the team id from the request and start `<name:TEAM#>`. So each team starts their pre-built container. 
+
+3. Next change is in the `challenges.py` in `/api/v1`. 
 	[![image.png](https://i.postimg.cc/ZnB1NQRt/image.png)](https://postimg.cc/YL7nKbYb)
-	When participants submit an answer the api now takes into account the team id of the request. 
+	
+ When participants submit an answer the api now takes into account the team id of the request. 
 	
 3.  Next we updated the `__init__.py` in `/plugins/challenges`. 
 	[![image.png](https://i.postimg.cc/Fst9ZbQg/image.png)](https://postimg.cc/jCX0q72L)
+
 Here for the challenge submitted we first check for flags and the content of the **data** column. If that contains the keyword **"TEAMID"** we infer that it is a individual team flag and send the flag checking logic to the new **compareteams** function. If the data column is empty - for a standard challenge we sent to the normal **compare**  function. 
 	
 4.  Added the new method **compareteams** in `/plugins/flags/__init__.py`:
 	[![image.png](https://i.postimg.cc/httPzDBH/image.png)](https://postimg.cc/gn1P1PrD)
+
 Here we can check the flag. Also we log the case if one team submits another team's flag (flag sharing).
 
 #### Turn off individual flag
