@@ -3,10 +3,8 @@
 - [NEU Team Solarwinds CTFd project](#neu-team-solarwinds-ctfd-project)
   - [Terraform Setup](#terraform-setup)
     - [Google Cloud Shell](#google-cloud-shell)
-<<<<<<< HEAD
-=======
     - [Individual Team Flags](#individual-team-flags)
->>>>>>> 5a80554919e02e6d1008f21f827564eb07a7dca5
+
   - [Credits](#credits)
 
 ## Terraform Setup
@@ -23,8 +21,7 @@ terraform apply -auto-approve
 
 ![architecture](architecture.drawio.png)
 
-<<<<<<< HEAD
-=======
+
 ## Individual Team Flags
 
 Our requirement for this project was to create Individual / unique flags for each team. Usually in a CTF the flags are same for each challenge. Our target was for a particular challenge there will be **N** number of different flags for **N** teams. So this meant for a file related challenge - lets say Forensics pcap, we would need to create **N number of the same pcap** with the slight modification to account for the flag. 
@@ -150,7 +147,7 @@ Do not run scripts. Change the `TEAM_INDIVIDUAL_FLAGS=True` to `False` in `/plug
 **Note**: This is not scalable if you have hundreds of teams like picoCTF but for a low-mid size CTF with around 30-40 teams should be fine. We have not tested with a large number of teams. 
 
 
->>>>>>> 5a80554919e02e6d1008f21f827564eb07a7dca5
+
 ## Credits
 
 <https://github.com/CTFd/CTFd>
