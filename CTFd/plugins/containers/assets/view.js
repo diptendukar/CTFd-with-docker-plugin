@@ -90,7 +90,13 @@ function createChallengeLinkElement(data, alert) {
 		let codeElement = document.createElement('code');
 		codeElement.textContent = 'nc ' + data.hostname + " " + data.port;
 		alert.append(codeElement);
-	} else {
+	} 
+	else if (data.connect == "ssh"){
+		let codeElement = document.createElement('code');
+		codeElement.textContent = 'ssh ' + data.hostname + " " + data.port;
+		alert.append(codeElement);
+	}
+	else {
 		let link = document.createElement('a');
 		link.href = 'http://' + data.hostname + ":" + data.port;
 		link.textContent = 'http://' + data.hostname + ":" + data.port;
