@@ -177,7 +177,7 @@ class ContainerManager:
         try:
             return self.client.containers.run(
                 image,
-                ports={str(port): str(random.randint(32000,34000))},
+                ports={str(port): str(random.randint(32000,37000))},
                 command=command,
                 detach=True,
                 auto_remove=True,
