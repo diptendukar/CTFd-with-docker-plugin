@@ -93,7 +93,7 @@ function createChallengeLinkElement(data, alert) {
 	} 
 	else if (data.connect == "ssh"){
 		let codeElement = document.createElement('code');
-		codeElement.textContent = 'ssh ' + data.hostname + " " + data.port;
+		codeElement.textContent = 'ssh -p' + data.port + " " + data.hostname;
 		alert.append(codeElement);
 	}
 	else {
